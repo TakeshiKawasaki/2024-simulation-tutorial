@@ -20,8 +20,9 @@ This work is licensed under a
 git clone https://github.com/TakeshiKawasaki/2024-simulation-tutorial.git repo
 ```
 を実行すると　新たに生成されるフォルダ'repo'以下に当リポジトリ内の全てのデータが入ります．<br>
-参考 (git install)：
-https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+参考 [(git install)][1]
+[1]:https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+
 
 ## 更新履歴<br>
 04/15：第1回講義で用いるサンプルプログラム等をLecture1におきました．講義が進むにつれデータをアップデートさせます．<br>
