@@ -59,6 +59,7 @@ plt.plot(x, y, "--",markersize=3,linewidth = 2.0, color="k",label=r"$\propto 1/\
 #図の書式設定
 plt.tick_params(which='major',width = 1, length = 10)
 plt.tick_params(which='minor',width = 1, length = 5)
+plt.minorticks_on()
 ax.spines['top'].set_linewidth(3)
 ax.spines['bottom'].set_linewidth(3)
 ax.spines['left'].set_linewidth(3)
