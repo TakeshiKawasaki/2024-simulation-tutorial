@@ -5,7 +5,7 @@
 #include <fstream>
 #include <cfloat>
 
-#define temp 0.01
+#define temp 1.0 //parameter: you can change this for changing temperature.
 #define dt 0.01
 #define ensemble 1000
 #define window 39
