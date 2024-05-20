@@ -13,6 +13,6 @@ Box Muller法による分散1の正規乱数 `gaussian rand()` を生成する�
 作図プログラム．`temp=1.0,0.1,0,0.01`  の解析結果(平均二乗変位と速度相関関数)を用意する必要がある．
 
 ## 第5回講義動画（NUSSリンク） <bf>
-
+https://nuss.nagoya-u.ac.jp/s/w5LaEG3ARL52Lyc
   
 ## 第５回アンケートQ&A集 <bf>
