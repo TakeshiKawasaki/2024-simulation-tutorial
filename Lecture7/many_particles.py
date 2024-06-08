@@ -47,8 +47,9 @@ for j in range(1,5):
     if(j==1):
         plt.ylabel(r"$y/a$",color='k', size=35)
     plt.title("$T^*={}$".format(temp[j-1]))
+    ax.set_aspect('equal')
 
-ax.set_aspect('equal')
+
 plt.subplots_adjust(wspace=0.2, hspace=0.25)
 plt.savefig('./Lecture7/LJ.pdf',bbox_inches="tight")
 plt.show()
