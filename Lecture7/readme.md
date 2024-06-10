@@ -1,5 +1,5 @@
 ## 第７回講義動画 <br>
-
+https://nuss.nagoya-u.ac.jp/s/3Rt8ZcwdjPCZxgZ
 ## 第７回Q&A集
 
 ## 各種プログラムの説明　<br>
