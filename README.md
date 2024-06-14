@@ -32,3 +32,5 @@ git clone https://github.com/TakeshiKawasaki/2024-simulation-tutorial.git repo
 05/11：第4回講義で用いるサンプルプログラム等をLecture4におきました．<br>
 05/17：第5回講義で用いるサンプルプログラム等をLecture5におきました．<br>
 05/24：第6回講義で用いるサンプルプログラム等をLecture6におきました．<br>
+06/08：第7回講義で用いるサンプルプログラム等をLecture6におきました．<br>
+06/15：第8回講義で用いるサンプルプログラム等をLecture6におきました．<br>
