@@ -1,7 +1,7 @@
 ## 第７回講義動画 <br>
 https://nuss.nagoya-u.ac.jp/s/3Rt8ZcwdjPCZxgZ
 ## 第７回Q&A集
-
+https://irradiated-pot-667.notion.site/7-Q-A-8b1443826c514dafbdec7f055e9b621f
 ## 各種プログラムの説明　<br>
 **langevin_many.cpp:**<br>
 自主課題6の主計算サンプルプログラム<br>
