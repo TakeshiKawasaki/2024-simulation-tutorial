@@ -1,5 +1,5 @@
 ## 第８回講義動画 <bf>
-
+https://nuss.nagoya-u.ac.jp/s/ktfzMJDHJ47Q3sm
 ## 第８回アンケート返答集<bf>
 
 ## 今回の内容：Moarkov chain Monte-Calro simulations <br>
