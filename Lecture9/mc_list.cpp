@@ -140,7 +140,7 @@ int mc(double (*x)[dim],double (*x_update)[dim],double *a,double temp0,int *coun
   double dr[2];
   double U0,Ui;
   double p;
-  int  i = (int)(Np*unif_rand(0,1.0));
+  int  i = (int)(Np*unif_rand(0,1.0-DBL_EPSILON)));
   calc_energy(x,a,&Ui,list,i);
   U0=Ui;
   for(int k=0;k<dim;k++){
