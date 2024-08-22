@@ -1,0 +1,815 @@
+%%%%writte in utf8 %%%%%%%%%%%%%%
+%\documentclass[dvipdfmx,cjk,8pt]{beamer}
+\documentclass[aspectratio=169,dvipdfmx,cjk,handout,hyperref,8pt]{beamer} %% 資料用
+%\documentclass[dvipdfm,cjk]{beamer} %% オプションは環境や利用するプログラムに
+%\documentclass[dvips,cjk]{beamer}   %% よって変える
+\usepackage{pxjahyper}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks=false,
+    citebordercolor=green,
+    linkbordercolor=blue,
+    linkcolor=blue,
+    urlbordercolor=cyan,
+}
+\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} %% しおりが文字化けしないように
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+
+%\setbeamertemplate{navigation symbols}{} %% 右下のアイコンを消す
+\usepackage{tcolorbox}
+\usepackage{dcolumn}   % needed for some tables
+\usepackage{bm}        % for math
+\usepackage{otf}
+\usepackage{amssymb, amsmath, amsfonts}   % for math
+%\usepackage{lipsum}        % for math
+\usepackage{color}
+\usepackage{wrapfig}
+
+%%%%%% font %%%%%%%%%%%%
+%\usepackage{mathpazo}
+ %\usepackage{cmbright}
+\usepackage {pxfonts}
+%\usepackage{kurier}
+%\usepackage {fourier}
+%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{frametitle}{series=\bfseries}
+
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{ulem}
+\usepackage{listings}
+ 
+\usepackage{adjustbox}
+%\usepackage{lstlinebgrd}
+
+\definecolor{darkred}{rgb}{0.7, 0, 0}
+\definecolor{darkgreen}{rgb}{0, 0.4, 0}
+\definecolor{navy}{rgb}{0, 0, 0.5}
+\definecolor{purple}{rgb}{0.45, 0, 0.45}
+\definecolor{codebg}{rgb}{0.95, 0.95, 0.95}
+\lstset{
+  language={C++}, %プログラミング言語によって変える。
+  basicstyle=\ttfamily,
+  basicstyle={\ttfamily\small},
+  keywordstyle={\color{blue}},
+  commentstyle={\color{darkgreen}},
+  backgroundcolor=\color{codebg},
+  stringstyle=\color{red},
+  showspaces=false, 
+  showstringspaces=false,
+  numbers=left,
+  breaklines=true,      
+  showtabs=false,
+  tabsize=2,
+}
+\usepackage{ccaption}
+% avoids incorrect hyphenation, added Nov/08 by SSR
+\hyphenation{ALPGEN}
+\hyphenation{EVTGEN}
+\hyphenation{PYTHIA}
+\DeclareGraphicsExtensions{{.pdf}}
+\newcommand{\TK}[1]{{\bf \color{red} #1}}
+\newcommand{\tk}[1]{{\bf \color{blue} #1}}
+\newcommand{\modify}[1]{{\color{blue} #1}}
+\newcommand{\del}{{\rm d}}
+\newcommand{\pdif}[2]{\frac{\partial #1}{\partial #2}}
+%%%figure capution%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\figurename}{{\bf 図}} 
+\renewcommand{\lstlistingname}{{\tk{リスト}}} 
+\renewcommand{\sectionname}{{\bf Sec.}}
+\renewcommand{\thefigure}{{\bf \arabic{figure}}}
+\newcommand{\fig}{{\bf 図}}
+\setbeamertemplate{caption}[numbered]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+%\usetheme{CambridgeUS}         %% theme の選択
+%\usetheme{Boadilla}           %% Beamer のディレクトリの中の
+%\usetheme{Madrid}             %% beamerthemeCambridgeUS.sty を指定
+\usetheme{Antibes}            %% 色々と試してみるといいだろう
+%\usetheme{Montpellier}        %% サンプルが beamer\doc に色々とある。
+%\usetheme{Berkeley}
+%\usetheme{Goettingen}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Luebeck}
+%\usetheme{Frankfurt} 
+
+%\usecolortheme{rose}          %% colortheme を選ぶと色使いが変わる
+%\usecolortheme{albatross}
+
+%\useoutertheme{shadow}                 %% 箱に影をつける
+\usefonttheme{professionalfonts}       %% 数式の文字を通常の LaTeX と同じにする
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}         %% 消えている文字をうっすらと表示する
+\setbeamertemplate{theorems}[numbered]  %% 定理に番号をつける
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{proposition}[thm]{Proposition}
+\theoremstyle{example}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{question}[thm]{Question}
+\newtheorem{prob}[thm]{Problem}
+%\usepackage{otf}
+\useoutertheme{infolines} % Alternatively: miniframes, infolines, split
+%\useinnertheme{circles}
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+\definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
+\definecolor{aliceblue}{RGB}{240,248,255}
+\setbeamercolor{palette primary}{bg=aliceblue,fg=blue}
+%\setbeamercolor{palette primary}{bg=lightgray,fg=blue}
+%\setbeamercolor{palette primary}{bg=white,fg=blue}
+\setbeamercolor{palette secondary}{bg=white,fg=blue}
+%\setbeamercolor{palette tertiary}{bg=UBCblue,fg=white}
+%\setbeamercolor{palette quaternary}{bg=UBCblue,fg=white}
+\setbeamercolor{structure}{fg=blue} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=blue} % TOC sections
+\setbeamercolor{subsection in head/foot}{bg=white,fg=blue}
+\title[Title Without Rambling]{My Rambling Presentation Title}
+%%%%itemの階層
+\usepackage{minijs}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+%タイトル色
+%\renewcommand{\labelitemi}{$\star$}
+
+%%%%%%%%%　（連続ページの番号付け）
+\setbeamertemplate{frametitle continuation}{%
+    \ifnum\insertcontinuationcount>1
+    {\small(\insertcontinuationcount)}
+    \fi} 
+%%%%%%%%%
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\bfr}{\begin{frame}}
+\newcommand{\efr}{\end{frame}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\ba}{\begin{align}}
+\newcommand{\ea}{\end{align}}
+\newcommand{\ave}[1]{\left\langle {#1} \right\rangle}
+\newcommand{\odif}[2]{\frac{{\rm d} #1}{{\rm d} #2}}
+\section<mode specification>[short section name]{section name}
+\setbeamersize{text margin left=30pt, text margin right=35pt}%左右余白
+
+\begin{document}
+
+\title[Simulation Practice (Sci.・Grad) Lecture 5]{Data Science Course Group: Simulation Practice\\Lecture 5~~Lecture Materials} 
+\author[Kawasaki TatsuSaki]{Instructor: Takeshi Kawasaki}            %% This information is used in various places
+\institute[Graduate School of Science, Physics]{\small{Nagoya University, Graduate School of Science, Department of Physics, Non-Equilibrium Physics Laboratory (R Lab)}}   %% Set this if possible
+\date{Last update: \today}
+\begin{frame}                  %% \begin{frame}..\end{frame} creates a single slide
+\titlepage                     %% Title page
+\end{frame}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \frametitle{\bf Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}                  %% Table of Contents (Omit if not needed)
+\frametitle{\bf Contents} 
+\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lecture Schedule}   
+\begin{frame}{\thesection.~\insertsection} 
+\bi
+\item This practical session will be conducted during the first semester of spring.
+\item Lecture materials will be uploaded by 11:00 AM on the scheduled lecture date.
+\item Schedule:
+\begin{enumerate}
+{
+\item 4/15: First Lecture
+\item 4/22: Second Lecture
+\item 4/30 (Tuesday): Third Lecture
+\item 5/13: Fourth Lecture (Midterm report assignment released)
+\item \TK{5/20: Fifth Lecture} 
+\item 5/27: Sixth Lecture (\tk{Midterm report submission deadline})
+\item \TK{6/03: No lecture}
+\item 6/10: Seventh Lecture (\tk{Final report assignment released})
+\item 6/17: Eighth Lecture
+\item 6/24: Ninth Lecture (Make-up class)
+}
+\end{enumerate}
+\ei
+\end{frame}
+
+\subsection{Syllabus} 
+\begin{frame}{\thesection.\thesubsection.~\insertsubsection} 
+The following topics are planned to be covered in this practical session (subject to change based on progress).
+\begin{enumerate}
+\item Introduction
+\bi
+\item Using C(C++) (primarily for numerical calculations)
+\item Using Python (for data analysis and plotting)
+\item Principles of numerical computation
+\item Round-off errors
+\item Non-dimensionalization in scientific computing
+\ei
+\item Numerical Solutions of Ordinary Differential Equations: Examples of Damped Oscillations and Harmonic Oscillators
+\bi
+\item Numerical integration of differential equations
+\item Stability of orbits and conservation laws
+\ei
+\item Brownian Motion of Single Particles
+\bi
+\item Langevin Equation (Stochastic Differential Equation)
+\item Generating normal random numbers
+\item Euler-Maruyama method
+\item Time average and ensemble average
+\ei
+\item Brownian Motion of Multi-Particle Systems
+\bi
+\item Calculation of interaction forces
+\item Simulation of non-equilibrium systems: Example of phase separation phenomena
+\ei
+\item Molecular Dynamics Simulation of Multi-Particle Systems
+\bi
+\item Position Verlet method and velocity Verlet method
+\item Conservation laws in multi-particle systems
+\ei
+\item Monte Carlo Method
+\bi
+\item Review of statistical mechanics
+\item Markov Chain Monte Carlo method
+\item Metropolis criterion
+\ei
+\end{enumerate}
+\end{frame}
+
+\section{Continuation from the Fourth Lecture}
+
+\subsection{Generating Normal Random Numbers: Box-Muller Method~\cite{Box1958Ann.Math.Statist.}}
+\begin{frame}[allowframebreaks,fragile]{\thesection.\thesubsection.~\insertsubsection} 
+\tk{In this section, we introduce methods for numerically generating normal random numbers, which were not fully covered in the fourth lecture.}
+\bi
+\item The Box-Muller method~\cite{Box1958Ann.Math.Statist.} is a well-known technique for generating normal random numbers ${\bf R}_G$ with a variance of 1.
+\ei
+\begin{block}{Box-Muller Method~\cite{Box1958Ann.Math.Statist.}}
+Let $U_1$ and $U_2$ be uniformly distributed random numbers in the range $[0,1]$. Then, the following $X_1$ and $X_2$ are independent standard (variance 1) normal random numbers.
+\begin{eqnarray}
+X_1&=&\sqrt{-2\log{U_1}}\cos{2\pi U_2} \label{BM1} \\
+X_2&=&\sqrt{-2\log{U_1}}\sin{2\pi U_2} \label{BM2}
+\end{eqnarray}
+\end{block}
+\tk{(Proof)}\newline
+\bi
+\item Solve for $U_1$ and $U_2$ by combining equations (\ref{BM1}) and (\ref{BM2}).
+\item First, by squaring $X_1$ and $X_2$, we obtain the following relation:
+\begin{eqnarray}
+ \log{U_1} &=& -\frac{X_1^2+ X_2^2}{2}\\
+      U_1&=&e^{-\frac{X_1^2+ X_2^2}{2}}
+\end{eqnarray}
+\item Dividing equation (\ref{BM1}) by equation~(\ref{BM2}), we get:
+\begin{eqnarray}
+\frac{X_2}{X_1} &=&\tan{2\pi U_2}\nonumber\\
+ U_2&=& \frac{1}{2\pi}\arctan\frac{X_2}{X1}
+\end{eqnarray}
+\item Using these, it can be shown that $X_1$ and $X_2$ are \TK{\fbox{independent Gaussian processes}}.
+\item Now, introduce the probability density functions $P(X_1, X_2)$ and $\tilde {P} (U_1, U_2)$. 
+\item The relationship between $P(X_1, X_2)$ and $\tilde {P} (U_1, U_2)$ is given by:
+\begin{eqnarray}
+P(X_1,X_2){\rm d}X_1{\rm d}X_2 = \tilde{P}(U_1,U_2){\rm d}U_1{\rm d}U_2=\tilde{P}(U_1,U_2) \left|\frac{\partial(U_1,U_2)}{\partial(X_1,X_2)}\right|{\rm d}X_1{\rm d}X_2
+\end{eqnarray}
+\item Since $U_1$ and $U_2$ are independent uniform random numbers in the range $[0, 1]$, 
+\begin{eqnarray}
+\int_0^1{\rm d}U_1\int_0^1{\rm d}U_2\tilde{P}(U_1,U_2)=1
+\end{eqnarray}
+we obtain $\tilde{P}(U_1,U_2)=1$. Therefore,
+\begin{eqnarray}
+P(X_1,X_2)= \left | \frac{\partial(U_1,U_2)}{\partial(X_1,X_2)} \right | 
+\end{eqnarray}
+\item Now, the Jacobian $|\frac{ \partial (U_1, U_2)}{\partial(X_1, X_2)}|$ is
+\begin{eqnarray}
+ \left|\frac{\partial(U_1,U_2)}{\partial(X_1,X_2)}\right| = \left|
+    \begin{array}{cc}
+      \frac{\partial U_1}{\partial X_1} & \frac{\partial U_2}{\partial X_1}  \\
+            \frac{\partial U_1}{\partial X_2} & \frac{\partial U_2}{\partial X_2}  \\
+    \end{array}
+  \right| = \left|\frac{\partial U_1}{\partial X_1}\frac{\partial U_2}{\partial X_2}-\frac{\partial U_2}{\partial X_1}  \frac{\partial U_1}{\partial X_2}\right |
+\end{eqnarray}
+\item Therefore, after performing the appropriate differentiation:
+{\small
+\begin{eqnarray}
+\left |\frac{\partial(U_1,U_2)}{\partial(X_1,X_2)}\right | = \left|\frac{1}{2\pi}\frac{e^{-\frac{X_1^2+X_2^2}{2}}}{1+(\frac{X_2}{X_1})^2} 
+-\frac{1}{2\pi}\frac{-X_2^2}{X_1^2}\frac{e^{-\frac{X_1^2+X_2^2}{2}}}{1+(\frac{X_2}{X_1})^2}
+\right| = \frac{1}{2\pi} e^{-\frac{X_1^2+X_2^2}{2}}= \frac{1}{\sqrt{2\pi}}e^{-\frac{X_1^2}{2}}\frac{1}{\sqrt{2\pi}}e^{-\frac{X_2^2}{2}}
+%= \frac{1}{\sqrt{2\pi}}e^{-\frac{X_1^2}{2}}+\frac{1}{\sqrt{2\pi}}e^{-\frac{X_2^2}{2}
+\end{eqnarray}
+} 
+is obtained. Hence,
+\begin{eqnarray}
+P(X_1,X_2)= \frac{1}{\sqrt{2\pi}}e^{-\frac{X_1^2}{2}}\frac{1}{\sqrt{2\pi}}e^{-\frac{X_2^2}{2}} 
+\end{eqnarray}
+Thus, $P(X_1, X _ 2) =p (X_1)p(X_2) $, showing that $X_1$ and $X_2$ are independent Gaussian processes.
+
+\begin{exampleblock}{$y = \arctan {x}$ Differentiation}
+$y = \arctan {x}$ gives,
+$x = \tan y$. Differentiating this with respect to $y$,
+\begin{eqnarray}
+\frac{{\rm d} x} {{\rm d} y} = \frac{1}{\cos^2 {y}}
+\end{eqnarray}
+This implies,
+ \begin{eqnarray}
+ \frac{{\rm d} y}{{\rm d} x} = \cos^2 {y} = \frac{1}{1 + \tan^2y} = \frac{1} {1 + x^2}
+ \end{eqnarray}
+\end{exampleblock}
+\ei
+\end{frame}
+
+
+\subsection{Acceleration of the Box-Muller Method (Marsaglia Polar Method)}
+\begin{frame}[allowframebreaks,fragile]{\bf\thesection.\thesubsection.~\insertsubsection}  
+\begin{block}{\thesection.\thesubsection~Objective}
+Next, we explain the Marsaglia polar method.
+\end{block}
+
+%%%%%%%%%%%%%%%%%
+\begin{columns}
+%%%%%%%%%%%%%%%%%
+\begin{column}{60mm}
+%%%%%%%%%%%%%%%%%
+\begin{exampleblock}{Improved Box-Muller Method (Marsaglia Polar Method)~\cite{Marsaglia1964SIAMRev.a}}
+{\small
+\begin{enumerate}
+\item By using uniform random numbers $u_1$, $u_2$ within the range $[-1, 1]$, introduce the 2D vector
+\begin{eqnarray}
+{\bf R}=(u_1,u_2)
+\end{eqnarray}
+Here, we randomly generate ${\bf R}$ and only extract pairs that fall within a unit circle (discard those outside).
+\item In this way, $R ^2 = u_1 ^2 + u_2^2 $ becomes a uniform random number in the range $[0, 1]$ (proof provided below).
+Therefore, set $U_1 = R^2$, and obtain $\sqrt {-2 \log {U_1}}$. 
+\item Since the argument of ${\bf R}$ is uniformly distributed within the range $[0,2\pi]$, it is equivalent to $2\pi U_2$. 
+Thus, trigonometric functions with $2\pi U_2$ as arguments can be obtained indirectly as:
+\begin{eqnarray}
+\frac{u_1}{R}&=&\cos{2\pi U_2}\\  
+\frac{u_2}{R}&=&\sin{2\pi U_2}
+\end{eqnarray}
+without directly computing trigonometric functions, thereby improving computational speed.
+\end{enumerate}}
+\end{exampleblock}
+%%%%%%%%%%%%%%%%%
+\end{column}
+\begin{column}{50mm}
+%%%%%%%%%%%%%%%%%
+\bi
+\item In the Box-Muller method, \TK{the calculation of trigonometric functions is relatively expensive}, and it becomes a significant cost when generating a large number of random numbers. 
+\item Here, we introduce a method that achieves the same results as the Box-Muller method without directly calculating trigonometric functions (Marsaglia polar method)~\cite{Marsaglia1964SIAMRev.a}.
+\ei
+%%%%%%%%%%%%%%%%%
+\end{column}
+\end{columns}
+%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+\includegraphics[width=10cm]{MP.pdf}
+\caption{Uniform random number generation in the Marsaglia polar method.}
+\label{fig:fig0}
+\end{figure}
+
+\newpage
+(\fbox{2} Proof)\newline
+Let $X = R ^ 2 $. The relationship between the probability density function $f (X)$ and the probability density function $g(R)$ with respect to $R$ is given by:
+\begin{eqnarray}
+f(X){\rm d}X = g(R) {\rm d}R = g(R) \frac{\partial R}{\partial X}{\rm d}X
+\end{eqnarray}
+Now, since $g(R)$ is proportional to $R$\footnote{The area of the annulus, when divided into small segments, is proportional to $R$.}, $g (R) = CR $ (where $C$ is a constant). Therefore, by performing the following integration:
+\begin{eqnarray}
+\int_0^1g (R) {\rm d} R = \left [\frac {C} {2}R^2 \right]_0^1 = \frac {C}{2} = 1 
+\end{eqnarray}
+we obtain $C = 2$. On the other hand, from the relationship $X = R ^ 2 $, $\frac{\partial R}{\partial X}=\frac{1}{2 R}$. Therefore,
+\begin{eqnarray}
+f(X){\rm d}X= \frac{2R}{2R}{\rm d}X= 1{\rm d}X
+\end{eqnarray}
+is obtained. Hence, $f(X)=1$, showing that $X=R^2$ is uniformly distributed over $[0,1]$.
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true, frame=single,caption= Normal Random Number Generation Algorithm (Box-Muller Method) The following program "BM.h" can be obtained from the GitHub repository \href{https://github.com/TakeshiKawasaki/2024-simulation-tutorial/tree/main}{\TK{\underbar{[Link]}}}. It can be used as a subroutine or included as a header.]
+double unif_rand(double left, double right)
+{
+  return left + (right - left)*rand()/RAND_MAX;
+}
+double gaussian_rand(void)
+{
+  static double iset = 0;
+  static double gset;
+  double fac, rsq, v1, v2;
+
+  if (iset == 0) {
+    do {
+      v1 = unif_rand(-1, 1);
+      v2 = unif_rand(-1, 1);
+      rsq = v1*v1 + v2*v2;
+    } while (rsq >= 1.0 || rsq == 0.0);
+    fac = sqrt(-2.0*log(rsq)/rsq);
+
+    gset = v1*fac;
+    iset = 0.50;
+    return v2*fac;
+  } else {
+    iset = 0;
+    return gset;
+  }
+}
+\end{lstlisting}
+\end{frame}
+
+\subsection{Various Averages}
+\begin{frame}[allowframebreaks,fragile]{\thesection.\thesubsection.~\insertsubsection} 
+\begin{block}{\thesection.\thesubsection~Objective}
+Since numerical results include statistical errors, it is necessary to perform various averaging operations to extract physically important elements during analysis. Two commonly used averaging methods are introduced.
+\end{block}
+\end{frame}
+
+\subsubsection{Time Averaging}
+\begin{frame}[allowframebreaks,fragile]{\thesection.\thesubsection.\thesubsubsection.~\insertsubsubsection} 
+\begin{exampleblock}{Time Averaging}
+Time averaging refers to the operation of averaging the values at each time point for physical quantities in a steady state.
+\end{exampleblock}
+\bi
+\item This operation is performed on a physical quantity $X(t)$ in a steady state, and is actually computed as:
+\begin{eqnarray}
+\langle X\rangle_{t_0}=\lim_{T\to\infty}\frac{1}{T}\int_0^T{\rm d}t_0 X(t_0)
+\end{eqnarray}
+\item Similarly, when this operation is applied to a two-time correlation function $C(t,t_0)=X(t+t_0)X(t_0)$, it becomes:
+\begin{eqnarray}
+ C(t)=\lim_{T\to\infty}\frac{1}{T}\int_0^T{\rm d}t_0C(t,t_0)
+\end{eqnarray}
+At this time, $C(t)=\langle X(t+t_0)X(t_0)\rangle_{t_0}$, or more simply $C(t)=\langle X(t)X(0)\rangle$.
+\ei
+
+\begin{figure}
+\includegraphics[width=9.cm]{time_average.jpeg}
+\caption{Concept of time averaging.}
+\label{fig:fig0}
+\end{figure}
+
+\end{frame}
+
+\subsubsection{Ensemble Averaging}
+\begin{frame}[allowframebreaks,fragile]{\thesection.\thesubsection.\thesubsubsection.~\insertsubsubsection} 
+\begin{exampleblock}{Ensemble Averaging}
+Ensemble averaging refers to the process of averaging the results of many independent and identical trials (experiments).
+\end{exampleblock}
+\bi
+\item Let $A_i$ be the physical quantity of the $\alpha$th sample in a thermal equilibrium state. Then the ensemble average is given by:
+\begin{eqnarray}
+\ave{A}_{\mathrm{ens}}=\frac{1}{N_{\mathrm{ens}}}\sum_{\alpha=1}^{N_{\mathrm{ens}}}A_\alpha
+\end{eqnarray}
+\item This is equivalent to the following statistical mechanical average:
+\begin{eqnarray}
+\langle A \rangle_{\mathrm{ens}}  = \frac{{\rm Tr} A({\bf q},{\bf p})e^{-\beta \hat{H}({\bf q},{\bf p})}}{Z} 
+\end{eqnarray}
+where $Z$ is the partition function: $Z= {\rm Tr} e^{-\beta \hat{H}({\bf q},{\bf p})}$.
+\item[Note] In a thermal equilibrium state, \TK{time averaging and ensemble averaging become equal.}
+\item[$\to$] \TK{\fbox{Ergodic Hypothesis}}
+\ei
+
+\begin{figure}
+\includegraphics[width=9.cm]{ensemble.jpeg}
+\caption{Concept of ensemble averaging.}
+\label{fig:fig0}
+\end{figure}
+
+
+\end{frame}
+
+\section{Explanation of the Fourth Assignment}
+\begin{frame}[allowframebreaks,fragile]{\thesection.~\insertsection}  
+\begin{exampleblock}{\fbox{Fourth Assignment} Implementation of Single-Particle Brownian Motion}
+Consider the motion of a single particle driven by thermal fluctuations in a three-dimensional solvent with temperature $T$ and friction coefficient $\zeta$. This particle's motion is widely known to be modeled by the Langevin equation $m{\bf \dot{v}}(t) = -\zeta {\bf v}(t) + {\bf F}_{\rm B}(t)$. When this Langevin equation is non-dimensionalized using length $a$ and time unit $\frac{m}{\zeta}$, the parameter $T^*=\frac{mk_{\mathrm{B}T}}{a^2\zeta^2}$ becomes the main parameter. Answer the following questions about the motion of this particle. Note that \tk{the notation $\ave{\cdots}$ below refers to quantities averaged over time or ensemble.}
+\bi
+\item[(1)] Non-dimensionalize the analytical solution for the mean square displacement $\ave{\Delta \mathbf{r}(t)^2}=\frac{2dk_{\mathrm{B}T}}{\zeta}\left\{t+\frac{m}{\zeta}e^{-\zeta t/m}-\frac{m}{\zeta}\right\}$ (see the fourth lecture notes) and express it using the parameter $T^*$.
+\item[(2)] Confirm that the theoretical solution and numerical solution match for any $T^*$. The numerical solution should be obtained using the semi-implicit Euler-Maruyama method.
+\item[(3)] Compute the velocity autocorrelation function
+$C(t)=\langle{\bf v}(t)\cdot{\bf v}(0)\rangle$. Also, compare the numerical result with the theoretical solution $C(t)=\ave{\mathbf{v}(t)\cdot\mathbf{v}(0)}=\frac{dk_BT}{m}e^{-\zeta t/m}$.
+\ei
+\end{exampleblock}
+
+\begin{figure}
+\includegraphics[width=8.cm]{msd.pdf}
+\caption{Numerical results of the mean square displacement. Here, the parameter $T^*$ is varied as $0.01,0.1,1.0$. The dashed lines represent the theoretical solution [Equation (\ref{msd_theory})]. The numerical solution agrees well with the theory.}
+\label{fig:fig1}
+\end{figure}
+\begin{figure}
+\includegraphics[width=8.cm]{corr.pdf}
+\caption{Numerical results of the velocity autocorrelation function. The parameter $T^*$ is varied as $0.01,0.1,1.0$. The dashed lines represent the theoretical solution [Equation (\ref{corr_theory})]. The numerical solution shows fairly good agreement.}
+\label{fig:fig2}
+\end{figure}
+
+
+\noindent\tk{\fbox{Explanation}}\newline
+\bi
+\item[(1)] The analytical solution for the mean square displacement $\ave{\Delta\mathbf{r}(t)^2}=\frac{2dk_{\mathrm{B}T}}{\zeta}\left\{ t+\frac{m}{\zeta}e^{-\zeta t/m}-\frac{m}{\zeta}\right\}$ is non-dimensionalized. Considering the units of length $a$ and time $t_0=m/\zeta$, we obtain:
+\begin{eqnarray}
+a^2\ave{\Delta\mathbf{\tilde{r}}(\tilde{t})^2}&=&\frac{2dk_{\mathrm{B}T}}{\zeta}[t_0\tilde{t}+t_0e^{-\tilde{t}}-t_0]\nonumber\\
+&=&\frac{2dmk_{\mathrm{B}T}}{\zeta^2}[t_0\tilde{t}+t_0e^{-\tilde{t}}-t_0]\nonumber\\
+&=&\frac{2dmk_{\mathrm{B}T}}{\zeta^2}[t_0\tilde{t}+t_0e^{-\tilde{t}}-t_0]
+\end{eqnarray}
+Thus,
+\begin{eqnarray}
+\ave{\Delta\mathbf{\tilde{r}}(\tilde{t})^2}&=&\frac{2dmk_{\mathrm{B}T}}{\zeta^2a^2}[t_0\tilde{t}+t_0e^{-\tilde{t}}-t_0]\nonumber\\
+&=&2dT^*[t_0\tilde{t}+e^{-\tilde{t}}-t_0]
+\end{eqnarray}
+Therefore, in three dimensions ($d=3$):
+\begin{eqnarray}
+\boxed{\ave{\Delta \mathbf{\tilde{r}}(\tilde{t})^2}=6T^*[t_0\tilde{t}+e^{-\tilde{t}}-t_0]}
+\label{msd_theory}
+\end{eqnarray}
+is obtained.\newline
+\tk{\fbox{Supplement}}\newline
+In the short-time limit, by expanding $e^{-\tilde{t}}\approx 1-\tilde{t}+\frac{1}{2}\tilde{t}^2$:
+\begin{eqnarray}
+\boxed{\ave{\Delta\mathbf{\tilde{r}}(\tilde{t})^2}\approx 3T^*\tilde{t}^2}
+\end{eqnarray}
+a ballistic trajectory is obtained. In the long-time limit, the term $e^{-\tilde{t}}-1$ drops out, so:
+\begin{eqnarray}
+\boxed{\ave{\Delta\mathbf{\tilde{r}}(\tilde{t})^2}\approx 6T^*\tilde{t}}
+\end{eqnarray}
+a diffusive trajectory is obtained. Thus, the non-dimensionalized diffusion coefficient is equal to the value of the parameter $T^*$ itself.
+
+\item[(2)] Examples of numerical computation in C language are provided in Listings 2 and 3. The main computation program that solves the equation of motion is ``langevin.cpp," and the analysis program for the mean square displacement and velocity autocorrelation function, using the data output from ``langevin.cpp," is ``analyze.cpp." Numerical results for the mean square displacement are shown in Fig.~\ref{fig:fig1}. The parameter $T^*$ is varied as $0.01,0.1,1.0$. The dashed lines represent the theoretical solution [Equation (\ref{msd_theory})]. Good agreement with the theory is observed.
+
+\item[(3)] As shown in the supplement of the fourth lecture, the velocity autocorrelation function of a Brownian particle for $t\geq0$ is given by:
+\begin{eqnarray}
+C(t)=\ave{\mathbf{v}(t)\cdot\mathbf{v}(0)}=\frac{dk_BT}{m}e^{-\zeta t/m}
+\end{eqnarray}
+When non-dimensionalized, this becomes:
+\begin{eqnarray}
+\frac{a^2}{t_0^2}\ave{\mathbf{\tilde{v}}(\tilde{t})\cdot\mathbf{\tilde{v}}(0)}=\frac{dk_BT}{m}e^{-\zeta t/m}
+\end{eqnarray}
+Thus,
+\begin{eqnarray}
+\ave{\mathbf{\tilde{v}}(\tilde{t})\cdot\mathbf{\tilde{v}}(0)}&=&\frac{dmk_BT}{\zeta^2a^2}e^{-\zeta t/m}\\
+&=&3T^*e^{-\tilde{t}}
+\label{corr_theory}
+\end{eqnarray}
+where $d=3$ is assumed. A comparison between this theoretical solution and numerical solution is shown in Fig.~\ref{fig:fig2}. The numerical solution shows fairly good agreement with the theory, though not as precise as for the mean square displacement.
+
+\ei
+
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true, frame=single,caption= ``langevin.cpp"
+Available from the following GitHub repository \href{https://github.com/TakeshiKawasaki/2024-simulation-tutorial/tree/main}{\TK{\underbar{[Link]}}}]
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <iostream>
+#include <fstream>
+#include <cfloat>
+#include "BM.h"
+
+#define tmax 10
+#define dt 0.01
+#define temp 0.01 //parameter
+#define ensemble 1000
+#define dim 3
+//using namespace std;
+
+void ini_phase(double *x,double *v){
+  int i;
+  for(i=0;i<dim;i++){
+    x[i]=0.;
+    v[i]=0.;
+  }
+}
+
+void ini_clock(int *j,double *tout){
+  *j=0;
+  *tout=1.e-2;
+}
+
+void eom(double *v,double *x){
+  int i;
+  for(i=0;i<dim;i++){
+    v[i]+=-v[i]*dt+sqrt(2.*temp*dt)*gaussian_rand();
+    x[i]+=v[i]*dt;
+  }
+}
+
+void output(double *x,double *v,int j){
+  char filename[128];
+  std::ofstream file;
+
+  sprintf(filename,"coord_dt%.3fT%.3f.dat",dt,temp);
+  file.open(filename,std::ios::app); //append
+  file <<j*dt<<"\t"<<x[0]<<"\t"<<x[1]<<"\t"<<x[2]<<std::endl;
+  //  std::cout<<j*dt<<"\t"<<x[0]<<"\t"<<x[1]<<"\t"<<x[2]<<std::endl;
+  file.close();
+
+  sprintf(filename,"vel_dt%.3fT%.3f.dat",dt,temp);
+  file.open(filename,std::ios::app); //append
+  file <<j*dt<<"\t"<<v[0]<<"\t"<<v[1]<<"\t"<<v[2]<<std::endl;
+  file.close();
+  
+}
+
+int main(){
+  double x[dim],v[dim],t,tout;
+  int i,j;
+  ini_phase(x,v);
+  for(i=0;i<ensemble;i++){
+    ini_clock(&j,&tout);
+    output(x,v,j);
+    while(j*dt < tmax){
+      j++;
+      eom(v,x);
+      if(j*dt >= tout){
+      output(x,v,j);
+      tout*=1.2;
+      }
+    }
+  }
+  return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true, frame=single,caption= ``analyze.cpp"
+Available from the following GitHub repository \href{https://github.com/TakeshiKawasaki/2024-simulation-tutorial/tree/main}{\TK{\underbar{[Link]}}}]
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <iostream>
+#include <fstream>
+#include <cfloat>
+
+#define temp 0.01
+#define dt 0.01
+#define ensemble 1000
+#define window 39
+#define dim 3
+//using namespace std;
+
+void ini(double *dr2,double *corr){
+  for(int i=0;i<window;i++){
+    dr2[i]=0.0;
+    corr[i]=0.0;
+  }
+}
+
+void input(double (*x)[dim],double (*v)[dim],double *t){
+  char filename[128];
+  std::ifstream file;
+  sprintf(filename,"coord_dt%.3fT%.3f.dat",dt,temp);
+  file.open(filename);
+  int asize=ensemble*window;
+  for(int i=0;i<asize;i++){
+    file >> t[i] >> x[i][0] >> x[i][1] >> x[i][2];
+  }
+  file.close();
+
+  sprintf(filename,"vel_dt%.3fT%.3f.dat",dt,temp);
+  file.open(filename);
+  for(int i=0;i<asize;i++){
+    file >> t[i] >> v[i][0] >> v[i][1] >> v[i][2];
+    // std::cout << t[i] <<"\t"<<v[0][i]<<"\t"<<v[1][i]<<"\t"<<v[2][i]<<std::endl;
+  }
+  file.close();
+}
+
+void output(double *t,double *dr2,double *corr){
+  char filename[128];
+  std::ofstream file;
+  sprintf(filename,"msd_dt%.3fT%.3f.dat",dt,temp);
+  file.open(filename);
+  for(int i=1;i<window;i++)
+    file<<t[i]-t[0]<<"\t"<<dr2[i]<<std::endl;
+  file.close();
+
+  sprintf(filename,"corr_dt%.3fT%.3f.dat",dt,temp);
+  file.open(filename);
+  for(int i=1;i<window;i++)
+    file<<t[i]-t[0]<<"\t"<<corr[i]<<std::endl;
+  file.close();
+}
+
+void analyze(double (*x)[dim],double (*v)[dim],double *t,double *dr2,double *corr){
+  double dx[dim],corr_x[dim];
+  for(int i=0;i<ensemble;i++)
+    for(int j=0;j<window;j++){
+      for(int k=0;k<dim;k++){
+      dx[k]=(x[j+window*i][k]-x[window*i][k]);
+      corr_x[k]=v[j+window*i][k]*v[window*i][k];
+      dr2[j]+=(dx[k]*dx[k])/ensemble;
+      corr[j]+=(corr_x[k])/ensemble;
+      }
+    }
+}
+
+int main(){
+  double t[ensemble*window],dr2[window],corr[window];
+  int i,j;
+  double  (*x)[dim] = new double[ensemble*window][dim];
+  double  (*v)[dim] = new double[ensemble*window][dim];
+
+  ini(dr2,corr);
+  input(x,v,t);
+  analyze(x,v,t,dr2,corr);
+  output(t,dr2,corr);
+  delete[] x;
+  delete[] v;
+  return 0;
+}
+\end{lstlisting}
+
+\end{frame}
+
+\section{Fifth Assignment}
+\begin{frame}[allowframebreaks,fragile]{\thesection.~\insertsection}  
+\begin{exampleblock}{\fbox{Fifth Assignment} Preparation for Multi-Particle Calculations}
+In a two-dimensional plane, distribute 512 discs with a diameter of 1 in a square space with a side length of $L=40$.
+\bi
+\item[(1)] Arrange the particles in a square lattice and visualize the result.
+\item[(2)] Arrange the particles in a hexagonal lattice and visualize the result.
+\item[(3)] (Advanced) Consider an algorithm for measuring the distance between particle $i$ and other particles $j$ when the square boundary is periodic (necessary for force calculations, etc.).
+\item[(4)] (Advanced) Consider an algorithm for storing the "particle numbers" within a distance (e.g., 5) calculated in (3) into an array (Verlet list).
+\ei
+\end{exampleblock}
+\end{frame}
+
+\section{Appendix 1: Comparison of Stack Memory and Dynamic (Heap) Memory Allocation (C Language)}
+\begin{frame}[allowframebreaks,fragile]{\thesection.~\insertsection} 
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true, frame=single,caption=Variable and Array Allocation Using Stack Memory (Example in C). Stack memory (in the stack region) is generally limited to around 10 MB on a laptop PC (quite small)~\cite{LemniscaterQiita}.]
+double x,y[10000],z[10000][10];
+\end{lstlisting}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true, frame=single,caption=Dynamic Memory Allocation (Example in C++). The method for releasing memory differs between variables and arrays. Memory (in the heap region) can generally be allocated up to the GB order on a laptop PC~\cite{LemniscaterQiita}. The same can be done in C language using the malloc function.]
+double *x = new double;
+double *y = new double[10000]; 
+double (*z)[10] = new double[10000][10];
+//  Free memory when no longer needed
+delete x;
+delete [] y;
+delete [] z;
+\end{lstlisting}
+\end{frame}
+
+\section{References}
+\begin{frame}[allowframebreaks]{References and Websites}
+   % \scriptsize
+    \beamertemplatetextbibitems
+    \bibliographystyle{pnas2011.bst}
+    \bibliography{2022sim_tutorial.bib}
+\end{frame}
+
+
+
+%\begin{frame}   %% \newtheorem で新しい環境も作れる
+%\begin{thm}
+%定理型環境が使える。
+%使い方は普通の \LaTeX と同じ
+%\end{thm}
+%\pause
+
+%\begin{proof}
+%証明も書ける。
+%\end{proof}
+%\pause
+%\end{frame}
+
+%\begin{frame} 
+%\frametitle{物理学とは} 
+%\begin{columns}
+%\begin{column}{50mm}
+%\includegraphics[width=4cm]{fig1.pdf}
+%\end{column}
+%\begin{column}{60mm}
+%証明も書ける
+%\end{column}
+%\end{columns}
+%\end{frame}
+
+%\begin{frame}
+%\begin{columns}
+%\begin{column}{50mm}
+%\begin{exampleblock}{xxx}
+%\centering{columns 内の幅 40mm の column}
+%\end{exampleblock}
+%\end{column}
+%\begin{column}{60mm}
+%\begin{exampleblock}{xxx}
+%\centering{columns 内の幅 50mm の column}
+%\end{exampleblock}
+%\end{column}
+%\end{columns}
+%\end{frame}
+\end{document}
+
+Memo:
+（１）特例期間中は、対面の講義は行わず、NUCT にアップロードされた講義資料による自学・自習を基本とします。課題もNUCT上にアップロードしますので、問題兼解答用紙をダウンロードし、解答のうえ後日指示する場所に提出してください。通学ができず課題提出が困難である場合は不利益が生じないように対応しますので、川崎まで連絡をください。
+
+（２）教科書：新編力学（藤城敏幸著，東京教学社）を各自取得されることが望ましいです。講義はこれに準拠して構成します。
+
+（３）特例期間中、もともと講義が行われる予定であった時間・場所（金曜2限C25講義室）で，もともと講義を担当する予定であった教員（川崎）が，来室する学生の質問に対応します。4/17は学生番号9 桁の末尾 奇数番、4/24は偶数の学生を対象とします（いずれも第1回講義に関する内容）。最初の10分程度は本講義に関する方針説明を簡潔に行い、その後、講義・課題に関する各質問に対応します。
+
+（４）講義資料・課題は講義予定日の5日前までにはアップロードしますので、各自NUCTをチェックするようにしてください。
+
